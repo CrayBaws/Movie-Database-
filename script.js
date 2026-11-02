@@ -30,7 +30,13 @@ async function fetchMovies(query, page = 1) {
   currentPage = page;
 
   resultsInfo.innerHTML = `<span>Showing:</span> ${query}`;
-  moviesGrid.innerHTML = `<p class="loading">Loading...</p>`;
+
+  moviesGrid.innerHTML = `
+    <div class="loading">
+      <div class="loading__spinner"></div>
+      <p>Loading movies...</p>
+    </div>
+  `;
 
   try {
     const res = await fetch(

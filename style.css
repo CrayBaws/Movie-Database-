@@ -24,7 +24,6 @@ body {
   initial-value: 135deg;
 }
 
-
 nav {
   background-image: linear-gradient(
     var(--nav-angle),
@@ -84,8 +83,9 @@ nav:has(.search-form__input:hover) {
   align-items: center;
   justify-self: flex-start;
 }
+
 .logo__img {
-  width: 34px;
+  width: 100px;
 }
 
 .logo__title {
@@ -234,6 +234,38 @@ main {
   box-shadow: 1px 8px 24px rgb(0, 0, 0, 0.5);
 }
 
+/* Loading State */
+.loading {
+  grid-column: 1 / -1;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  color: #333;
+  font-weight: 500;
+}
+
+.loading__spinner {
+  width: 45px;
+  height: 45px;
+  border: 5px solid #d8d8d8;
+  border-top-color: #00b5e7;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.loading p {
+  margin: 0;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /* Skeleton Loading */
 .movie-card--skeleton {
   background: #e0e0e0;
@@ -286,25 +318,26 @@ footer {
   margin-top: 20px;
 }
 
-
-
-
 @media (max-width: 800px) {
   nav {
     grid-template-columns: 1fr;
   }
+
   .logo,
   .search-form {
     grid-column: 1;
   }
+
   .logo {
     justify-self: center;
     margin-bottom: 12px;
   }
+
   .logo__title {
     font-size: 24px;
     margin-left: 8px;
   }
+
   .search-form__input {
     width: 320px;
   }
