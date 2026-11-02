@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simplified Movies API ref</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <nav>
+      <div class="logo">
+        <img
+          src="./assets/fes-logo.png"
+          alt=""
+          class="logo__img"
+          width="50px"
+        />
+        <div class="logo__title"><span>Simplified</span> Flix</div>
+      </div>
+
+      <form class="search-form" id="searchForm">
+        <div class="search-form__group">
+          <input
+            class="search-form__input"
+            type="text"
+            id="searchInput"
+            placeholder="Search movies..."
+            required
+          />
+
+          <button class="search-form__button" type="submit" aria-label="Search">
+            <svg
+              class="search-form__icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="11" cy="11" r="7"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+        </div>
+      </form>
+    </nav>
+
+    <main>
+      <div class="controls">
+        <p id="resultsInfo" class="resultsInfo"><span>Showing:</span> None</p>
+
+        <div>
+          <label for="sortSelect">Sort:</label>
+          <select id="sortSelect">
+            <option value="default">Default</option>
+            <option value="a-z">A - Z</option>
+            <option value="z-a">Z - A</option>
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- EMPTY GRID — JS will populate this -->
+      <div class="movies-grid" id="moviesGrid"></div>
+
+      <!-- PAGINATION BUTTONS -->
+      <div class="pagination">
+        <button id="prevPage">Previous</button>
+        <button id="nextPage">Next</button>
+      </div>
+    </main>
+
+    <footer>
+      <p>Created by Simplified.org. Powered by OMDBapi.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
